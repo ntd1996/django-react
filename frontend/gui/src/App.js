@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import 'antd/dist/antd.css';
 import './App.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Bas1eRouter from './routes';
 import CustomLayout from './containers/Layout';
+import BaseRouter from './routes';
 
-import ArticleList from './components/Article';
+
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <CustomLayout>
-          <ArticleList />
-        </CustomLayout>
+        <Router>
+          <CustomLayout>
+            <BaseRouter />
+          </CustomLayout>
+        </Router>
       </div>
     );
   }
