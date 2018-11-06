@@ -1,3 +1,10 @@
+from articles.api.views import ArticleViewSet
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
+router.register(r"", ArticleViewSet, base_name="articles")
+urlpatterns = router.urls
+
 # from django.urls import path
 # from rest_framework import viewsets
 
@@ -16,10 +23,3 @@
 #     path("<pk>/delete/", ArticleDeleteView.as_view()),
 #     path("<pk>", ArticleDetailView.as_view()),
 # ]
-
-from articles.api.views import ArticleViewSet
-from rest_framework.routers import DefaultRouter
-
-router = DefaultRouter()
-router.register(r"", ArticleViewSet, base_name="articles")
-urlpatterns = router.urls
