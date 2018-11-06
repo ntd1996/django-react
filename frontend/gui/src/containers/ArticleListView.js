@@ -1,5 +1,7 @@
 import React from 'react';
 import Article from '../components/Article';
+import CustomForm from '../components/Form';
+import FooterLayout from '../components/Footer';
 import axios from 'axios';
 
 class ArticleList extends React.Component {
@@ -19,7 +21,18 @@ class ArticleList extends React.Component {
     }
     render() {
         return (
-            <Article data={this.state.articles} />
+            <div>
+                <Article data={this.state.articles} />
+                <h2>
+                    Create an articles
+                </h2>
+                <CustomForm
+                    requestType="post"
+                    articleID={null}
+                    btnText="Create"
+                />
+                <FooterLayout />
+            </div>
         )
     }
 }
